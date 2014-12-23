@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!-- saved from url=(0033)http://www.smlnj.org/doc/ML-Yacc/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title> ML-Yacc User's Manual			 Version 2.4
+ </title>
+
+</head>
+<body bgcolor="silver" text="black" data-feedly-mini="yes">
+
+
+<h1 align="center"> ML-Yacc User's Manual<br>			 Version 2.4
+ </h1>
+<h3 align="center"><a href="http://www.research.microsoft.com/users/dtarditi/">David R. Tarditi</a><sup><font size="2">1</font></sup><br>
+<a href="http://www.cs.princeton.edu/~appel">Andrew W. Appel</a><sup><font size="2">2</font></sup><br>
+<br>
+<sup><font size="2">1</font></sup><a href="http://www.research.microsoft.com/">
+Microsoft Research</a><br>
+<br>
+<sup><font size="2">2</font></sup><a href="http://www.cs.princeton.edu/">Department of Computer Science</a><br>
+<a href="http://www.princeton.edu/">Princeton University</a><br>
+<br>
+<br>
+April 24, 2000
+</h3><br><br><br><div align="center">
+(c) 1989, 1990, 1991,1994 Andrew W. Appel, David R. Tarditi
+</div><br>
+<b>This software comes with ABSOLUTELY NO WARRANTY. It is subject only to
+the terms of the ML-Yacc NOTICE, LICENSE, and DISCLAIMER (in the
+file COPYRIGHT distributed with this software).
+</b><br>
+<br>
+New in version 2.3: Improved error correction directive
+<code>%change</code> that allows multi-token insertions, deletions,
+substitutions.
+<p>
+New in version 2.4: Explanation of how to build a parser (Section 5)
+and the Calc example (Section 7) revised for SML/NJ Version 110 and
+the use of CM.<br>
+<br>
+</p><ul>
+<li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc001.html"> Introduction</a>
+<ul>
+<li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc001.html#toc1"> General</a>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc001.html#toc2"> Modules</a>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc001.html#toc3"> Error Recovery</a>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc001.html#toc4"> Precedence</a>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc001.html#toc5"> Notation</a>
+</li></ul>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc002.html"> ML-Yacc specifications</a>
+<ul>
+<li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc002.html#toc6"> Lexical Definitions</a>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc002.html#toc7"> Grammar</a>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc002.html#toc8"> Required ML-Yacc Declarations</a>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc002.html#toc9"> Optional ML-Yacc Declarations</a>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc002.html#toc10"> Declarations for improving error-recovery</a>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc002.html#toc11"> Rules</a>
+</li></ul>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc003.html"> Producing files with ML-Yacc</a>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc004.html"> The lexical analyzer</a>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc005.html"> Creating the parser</a>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc006.html"> Using the parser</a>
+<ul>
+<li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc006.html#toc12"> Parser Structure Signatures</a>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc006.html#toc13"> Using the parser structure</a>
+</li></ul>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc007.html"> Examples</a>
+<ul>
+<li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc007.html#toc14"> Sample Grammar</a>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc007.html#toc15"> Sample Lexer</a>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc007.html#toc16"> Top-level code</a>
+</li></ul>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc008.html"> Signatures</a>
+<ul>
+<li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc008.html#toc17"> Parsing structure signatures</a>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc008.html#toc18"> Lexers</a>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc008.html#toc19"> Signatures for the functor produced by ML-Yacc</a>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc008.html#toc20"> User parser signatures</a>
+</li></ul>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc009.html"> Sharing constraints</a>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc010.html"> Hints</a>
+<ul>
+<li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc010.html#toc21"> Multiple start symbols</a>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc010.html#toc22"> Functorizing things further</a>
+</li></ul>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc011.html"> Acknowledgements</a>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc012.html"> Bugs</a>
+</li><li><a href="http://www.smlnj.org/doc/ML-Yacc/mlyacc013.html"> References</a>
+</li></ul>
+<!--FOOTER-->
+<hr size="2">
+<blockquote><em>This document was tranlated from L<sup>A</sup>T<sub>E</sub>X by
+</em><a href="http://para.inria.fr/~maranget/hevea/index.html"><em>H</em><em><font size="2"><sup>E</sup></font></em><em>V</em><em><font size="2"><sup>E</sup></font></em><em>A and H</em><em><font size="2"><sup>A</sup></font></em><em>C</em><em><font size="2"><sup>H</sup></font></em><em>A</em></a><em>.
+</em></blockquote>
+
+
+<div id="feedly-mini" title="feedly Mini tookit"></div></body></html>
